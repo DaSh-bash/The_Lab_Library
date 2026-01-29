@@ -1,0 +1,1 @@
+(Danaus_plexippus:1,(((Maniola_hyperantus:1,Pararge_aegeria:1)N4:1,Bicyclus_anynana:1)N2:1,((Junonia_coenia:1,(Vanessa_cardui:1,Vanessa_tameamea:1)N7:1)N5:1,(Heliconius_melpomene_melpomene:1,Heliconius_erato_lativitta:1)N6:1)N3:1)N1:1)N0;

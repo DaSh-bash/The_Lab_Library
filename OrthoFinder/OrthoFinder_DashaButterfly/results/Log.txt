@@ -1,0 +1,20 @@
+2022-01-07 11:55:19 : Started OrthoFinder version 2.5.2
+Command Line: /sw/bioinfo/OrthoFinder/2.5.2/rackham/orthofinder.py -ft /proj/uppstore2017185/b2014034_nobackup/Karin/link_map_vanessa/output/10_orthofinder_220103/filtered_data/OrthoFinder/Results_Jan03/ -s ../../rooted_tree.txt
+
+WorkingDirectory_Base: /proj/uppstore2017185/b2014034_nobackup/Karin/link_map_vanessa/output/10_orthofinder_220103/filtered_data/OrthoFinder/Results_Jan03/WorkingDirectory/
+FN_Orthogroups: /proj/uppstore2017185/b2014034_nobackup/Karin/link_map_vanessa/output/10_orthofinder_220103/filtered_data/OrthoFinder/Results_Jan03/WorkingDirectory/clusters_OrthoFinder_I1.5.txt_id_pairs.txt
+Species Tree: ../../rooted_tree.txt
+WorkingDirectory_Trees: /proj/uppstore2017185/b2014034_nobackup/Karin/link_map_vanessa/output/10_orthofinder_220103/filtered_data/OrthoFinder/Results_Jan03/WorkingDirectory/
+
+Species used: 
+0: Bicyclus_anynana.fa
+1: Danaus_plexippus.fa
+2: Heliconius_erato_lativitta.fa
+3: Heliconius_melpomene_melpomene.fa
+4: Junonia_coenia.fa
+5: Maniola_hyperantus.fa
+6: Pararge_aegeria.fa
+7: Vanessa_cardui.fa
+8: Vanessa_tameamea.fa
+
+2022-01-07 11:59:29 : OrthoFinder run completed

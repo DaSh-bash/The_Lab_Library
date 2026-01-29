@@ -1,0 +1,11 @@
+	Bicyclus_anynana	Danaus_plexippus	Heliconius_erato_lativitta	Heliconius_melpomene_melpomene	Junonia_coenia	Maniola_hyperantus	Pararge_aegeria	Vanessa_cardui	Vanessa_tameamea
+"Number of genes"	18188	15130	14612	17701	17244	13936	15064	13161	13266
+"Number of genes in orthogroups"	15764	13853	13189	15990	15444	13769	14923	12692	13209
+"Number of unassigned genes"	2424	1277	1423	1711	1800	167	141	469	57
+"Percentage of genes in orthogroups"	86.7	91.6	90.3	90.3	89.6	98.8	99.1	96.4	99.6
+"Percentage of unassigned genes"	13.3	8.4	9.7	9.7	10.4	1.2	0.9	3.6	0.4
+"Number of orthogroups containing species"	11668	11567	9841	11188	11137	10847	10997	10361	10752
+"Percentage of orthogroups containing species"	83.2	82.5	70.2	79.8	79.4	77.3	78.4	73.9	76.7
+"Number of species-specific orthogroups"	172	53	104	149	116	35	61	19	19
+"Number of genes in species-specific orthogroups"	667	169	278	1072	424	115	457	63	56
+"Percentage of genes in species-specific orthogroups"	3.7	1.1	1.9	6.1	2.5	0.8	3.0	0.5	0.4

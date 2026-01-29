@@ -1,0 +1,1 @@
+(Danaus_plexippus:900,(((Maniola_hyperantus:1860,Pararge_aegeria:2917)N4:151,Bicyclus_anynana:2093)N2:174,((Junonia_coenia:2119,(Vanessa_cardui:648,Vanessa_tameamea:1563)N7:65)N5:70,(Heliconius_melpomene_melpomene:3181,Heliconius_erato_lativitta:1640)N6:282)N3:32)N1:176)N0;

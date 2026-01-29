@@ -1,0 +1,9 @@
+0: Bicyclus_anynana.fa
+1: Danaus_plexippus.fa
+2: Heliconius_erato_lativitta.fa
+3: Heliconius_melpomene_melpomene.fa
+4: Junonia_coenia.fa
+5: Maniola_hyperantus.fa
+6: Pararge_aegeria.fa
+7: Vanessa_cardui.fa
+8: Vanessa_tameamea.fa

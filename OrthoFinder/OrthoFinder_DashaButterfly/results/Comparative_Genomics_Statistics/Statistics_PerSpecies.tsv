@@ -1,0 +1,100 @@
+	Bicyclus_anynana	Danaus_plexippus	Heliconius_erato_lativitta	Heliconius_melpomene_melpomene	Junonia_coenia	Maniola_hyperantus	Pararge_aegeria	Vanessa_cardui	Vanessa_tameamea
+Number of genes	18188	15130	14612	17701	17244	13936	15064	13161	13266
+Number of genes in orthogroups	15764	13853	13189	15990	15444	13769	14923	12692	13209
+Number of unassigned genes	2424	1277	1423	1711	1800	167	141	469	57
+Percentage of genes in orthogroups	86.7	91.6	90.3	90.3	89.6	98.8	99.1	96.4	99.6
+Percentage of unassigned genes	13.3	8.4	9.7	9.7	10.4	1.2	0.9	3.6	0.4
+Number of orthogroups containing species	11668	11567	9841	11188	11137	10847	10997	10361	10752
+Percentage of orthogroups containing species	83.2	82.5	70.2	79.8	79.4	77.3	78.4	73.9	76.7
+Number of species-specific orthogroups	172	53	104	149	116	35	61	19	19
+Number of genes in species-specific orthogroups	667	169	278	1072	424	115	457	63	56
+Percentage of genes in species-specific orthogroups	3.7	1.1	1.9	6.1	2.5	0.8	3.0	0.5	0.4
+
+
+Number of genes per-species in orthogroup	Number of orthogroups	Number of orthogroups	Number of orthogroups	Number of orthogroups	Number of orthogroups	Number of orthogroups	Number of orthogroups	Number of orthogroups	Number of orthogroups
+'0	2359	2460	4186	2839	2890	3180	3030	3666	3275
+'1	9673	9986	7904	9745	9044	9278	9261	8843	9209
+'2	1368	1220	1365	926	1404	1057	1065	1179	1065
+'3	319	217	335	207	331	275	347	209	272
+'4	104	78	101	95	128	110	113	60	105
+'5	55	20	46	50	65	37	75	24	50
+'6	40	18	30	33	45	26	28	15	20
+'7	21	11	19	22	22	12	21	6	16
+'8	18	7	6	13	17	6	12	2	5
+'9	12	3	4	11	12	7	6	6	3
+'10	5	2	4	15	11	13	8	3	3
+11-15	37	4	20	25	31	17	25	7	3
+16-20	4	0	3	9	16	4	16	2	1
+21-50	10	1	3	23	11	5	20	5	0
+51-100	1	0	1	8	0	0	0	0	0
+101-150	1	0	0	5	0	0	0	0	0
+151-200	0	0	0	1	0	0	0	0	0
+201-500	0	0	0	0	0	0	0	0	0
+501-1000	0	0	0	0	0	0	0	0	0
+'1001+	0	0	0	0	0	0	0	0	0
+
+Number of genes per-species in orthogroup	Percentage of orthogroups	Percentage of orthogroups	Percentage of orthogroups	Percentage of orthogroups	Percentage of orthogroups	Percentage of orthogroups	Percentage of orthogroups	Percentage of orthogroups	Percentage of orthogroups
+'0	16.8	17.5	29.8	20.2	20.6	22.7	21.6	26.1	23.3
+'1	69.0	71.2	56.3	69.5	64.5	66.1	66.0	63.0	65.7
+'2	9.8	8.7	9.7	6.6	10.0	7.5	7.6	8.4	7.6
+'3	2.3	1.5	2.4	1.5	2.4	2.0	2.5	1.5	1.9
+'4	0.7	0.6	0.7	0.7	0.9	0.8	0.8	0.4	0.7
+'5	0.4	0.1	0.3	0.4	0.5	0.3	0.5	0.2	0.4
+'6	0.3	0.1	0.2	0.2	0.3	0.2	0.2	0.1	0.1
+'7	0.1	0.1	0.1	0.2	0.2	0.1	0.1	0.0	0.1
+'8	0.1	0.0	0.0	0.1	0.1	0.0	0.1	0.0	0.0
+'9	0.1	0.0	0.0	0.1	0.1	0.0	0.0	0.0	0.0
+'10	0.0	0.0	0.0	0.1	0.1	0.1	0.1	0.0	0.0
+11-15	0.3	0.0	0.1	0.2	0.2	0.1	0.2	0.0	0.0
+16-20	0.0	0.0	0.0	0.1	0.1	0.0	0.1	0.0	0.0
+21-50	0.1	0.0	0.0	0.2	0.1	0.0	0.1	0.0	0.0
+51-100	0.0	0.0	0.0	0.1	0.0	0.0	0.0	0.0	0.0
+101-150	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
+151-200	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
+201-500	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
+501-1000	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
+'1001+	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
+
+Number of genes per-species in orthogroup	Number of genes	Number of genes	Number of genes	Number of genes	Number of genes	Number of genes	Number of genes	Number of genes	Number of genes
+'0	0	0	0	0	0	0	0	0	0
+'1	9673	9986	7904	9745	9044	9278	9261	8843	9209
+'2	2736	2440	2730	1852	2808	2114	2130	2358	2130
+'3	957	651	1005	621	993	825	1041	627	816
+'4	416	312	404	380	512	440	452	240	420
+'5	275	100	230	250	325	185	375	120	250
+'6	240	108	180	198	270	156	168	90	120
+'7	147	77	133	154	154	84	147	42	112
+'8	144	56	48	104	136	48	96	16	40
+'9	108	27	36	99	108	63	54	54	27
+'10	50	20	40	150	110	130	80	30	30
+11-15	475	55	255	311	394	217	315	91	37
+16-20	72	0	54	153	271	71	282	34	18
+21-50	289	21	93	705	319	158	522	147	0
+51-100	76	0	77	545	0	0	0	0	0
+101-150	106	0	0	530	0	0	0	0	0
+151-200	0	0	0	193	0	0	0	0	0
+201-500	0	0	0	0	0	0	0	0	0
+501-1000	0	0	0	0	0	0	0	0	0
+'1001+	0	0	0	0	0	0	0	0	0
+
+Number of genes per-species in orthogroup	Percentage of genes	Percentage of genes	Percentage of genes	Percentage of genes	Percentage of genes	Percentage of genes	Percentage of genes	Percentage of genes	Percentage of genes
+'0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
+'1	53.2	66.0	54.1	55.1	52.4	66.6	61.5	67.2	69.4
+'2	15.0	16.1	18.7	10.5	16.3	15.2	14.1	17.9	16.1
+'3	5.3	4.3	6.9	3.5	5.8	5.9	6.9	4.8	6.2
+'4	2.3	2.1	2.8	2.1	3.0	3.2	3.0	1.8	3.2
+'5	1.5	0.7	1.6	1.4	1.9	1.3	2.5	0.9	1.9
+'6	1.3	0.7	1.2	1.1	1.6	1.1	1.1	0.7	0.9
+'7	0.8	0.5	0.9	0.9	0.9	0.6	1.0	0.3	0.8
+'8	0.8	0.4	0.3	0.6	0.8	0.3	0.6	0.1	0.3
+'9	0.6	0.2	0.2	0.6	0.6	0.5	0.4	0.4	0.2
+'10	0.3	0.1	0.3	0.8	0.6	0.9	0.5	0.2	0.2
+11-15	2.6	0.4	1.7	1.8	2.3	1.6	2.1	0.7	0.3
+16-20	0.4	0.0	0.4	0.9	1.6	0.5	1.9	0.3	0.1
+21-50	1.6	0.1	0.6	4.0	1.8	1.1	3.5	1.1	0.0
+51-100	0.4	0.0	0.5	3.1	0.0	0.0	0.0	0.0	0.0
+101-150	0.6	0.0	0.0	3.0	0.0	0.0	0.0	0.0	0.0
+151-200	0.0	0.0	0.0	1.1	0.0	0.0	0.0	0.0	0.0
+201-500	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
+501-1000	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0
+'1001+	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.0

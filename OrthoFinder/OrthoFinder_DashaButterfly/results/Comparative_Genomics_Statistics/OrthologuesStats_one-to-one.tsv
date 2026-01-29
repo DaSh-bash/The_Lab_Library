@@ -1,0 +1,10 @@
+	Bicyclus_anynana	Danaus_plexippus	Heliconius_erato_lativitta	Heliconius_melpomene_melpomene	Junonia_coenia	Maniola_hyperantus	Pararge_aegeria	Vanessa_cardui	Vanessa_tameamea
+Bicyclus_anynana	0.0	9236.0	7400.0	8829.0	8774.0	8617.0	8555.0	8562.0	8203.0
+Danaus_plexippus	9236.0	0.0	7690.0	9352.0	8709.0	8789.0	8698.0	8727.0	8767.0
+Heliconius_erato_lativitta	7400.0	7690.0	0.0	8056.0	7459.0	6892.0	6738.0	7404.0	6902.0
+Heliconius_melpomene_melpomene	8829.0	9352.0	8056.0	0.0	8510.0	8432.0	8304.0	8429.0	8431.0
+Junonia_coenia	8774.0	8709.0	7459.0	8510.0	0.0	7860.0	7710.0	8791.0	8045.0
+Maniola_hyperantus	8617.0	8789.0	6892.0	8432.0	7860.0	0.0	9089.0	8061.0	8718.0
+Pararge_aegeria	8555.0	8698.0	6738.0	8304.0	7710.0	9089.0	0.0	7847.0	8570.0
+Vanessa_cardui	8562.0	8727.0	7404.0	8429.0	8791.0	8061.0	7847.0	0.0	8521.0
+Vanessa_tameamea	8203.0	8767.0	6902.0	8431.0	8045.0	8718.0	8570.0	8521.0	0.0
