@@ -1,0 +1,29 @@
+# this is a sample config file 
+
+## input treefile 
+treefile = noLabels_treePLinput.tree
+## smoothing parameter can start on 1000, then see the cv.out file after your run and select lowest value and rerun. Should be tested more than once
+smooth = 1000
+## average number of sites from alignment
+numsites = 19856727
+mrca = SCHIEDEA Smembranacea Sverticillata
+min = SCHIEDEA 4.7
+max = SCHIEDEA 7.3
+## output tree 
+outfile = astral_nuc_adjusted.dated.tree
+through
+log_pen
+
+## first run, uncomment prime (below). This will give you the opt parameter block you see below which can be copy and pasted. For other runs where you are optimizing your tree, comment out prime. 
+#prime
+randomcv
+cvoutfile = cv.out
+nthreads = 16
+
+
+## opt comes from prime. If you see error (might want to try a different opt=VALUE) in your .out file from run add +1 to each opt value until error goes away 
+opt = 3
+moredetail
+optad = 3
+optcvad = 5
+moredetailcvad
