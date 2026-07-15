@@ -5,4 +5,4 @@ The tree must be rooted with --root flag, and the subsitutions per site estimati
 
 TreePL also requires the total number of sites to be in the config.txt file. Use get_sites.sh to find the total number. And you can also use get_gene_lengths.sh which has one-liners if you want to get the average length of alignments for ASTRAL.
 
-- Julia 😎 
+-- Julia 😎 
