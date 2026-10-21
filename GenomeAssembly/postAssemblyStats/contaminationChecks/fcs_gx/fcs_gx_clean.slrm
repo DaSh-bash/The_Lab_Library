@@ -1,0 +1,50 @@
+#!/bin/bash
+
+#SBATCH --job-name=fcsgxcln      ### named job, limit 8 chars
+#SBATCH --output=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/logs/%j.%x.out
+#SBATCH --error=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/logs/%j.%x.err
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=10G
+#SBATCH --time=1:00:00
+#SBATCH --mail-user=thomas.buchloh@univie.ac.at
+#SBATCH --mail-type=BEGIN,END,FAIL
+
+
+####################################################################
+# Author: Thomas Buchloh.
+# Date: Aug 2026
+# Purpose: Companion to fcs_gx_screen.slrm -- reads that job's action
+#          report (<fasta_basename>.<TAX_ID>.fcs_gx_report.txt) and
+#          strips the flagged contigs out, writing a cleaned FASTA
+#          plus a separate FASTA of exactly what was removed. Run
+#          after fcs_gx_screen.slrm has completed; submit by hand, no
+#          dependency wiring here.
+#
+#          Runs against this project's own copy of the container (see
+#          fcs_gx_download_db.slrm), not another user's shared/
+#          read-only copy.
+####################################################################
+
+set -euxo pipefail
+
+FASTA=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/purge_dups_v1.2/woodsia_obtusa.purged.fa
+TAX_ID=29611
+
+OUT_DIR=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/contamination/fcs_gx
+cd "$OUT_DIR"
+
+fasta_base=$(basename "$FASTA" .fa)
+REPORT="${OUT_DIR}/${fasta_base}.${TAX_ID}.fcs_gx_report.txt"
+
+FCSDIR=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/data/databases/fcs_gx
+export FCS_DEFAULT_IMAGE="${FCSDIR}/fcs-gx.sif"
+export NCBI_FCS_REPORT_ANALYTICS=1
+
+cat "$FASTA" | python3 "${FCSDIR}/fcs.py" clean genome \
+    --action-report "$REPORT" \
+    --output "${OUT_DIR}/woodsia_obtusa_clean.fasta" \
+    --contam-fasta-out "${OUT_DIR}/woodsia_obtusa_contam.fasta"
+
+# finished
+exit

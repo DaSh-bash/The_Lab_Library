@@ -1,0 +1,66 @@
+#!/bin/bash
+
+#SBATCH --job-name=fcsgxdb      ### named job, limit 8 chars
+#SBATCH --output=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/logs/%j.%x.out
+#SBATCH --error=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/logs/%j.%x.err
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=4G
+#SBATCH --time=1:00:00
+#SBATCH --mail-user=thomas.buchloh@univie.ac.at
+#SBATCH --mail-type=BEGIN,END,FAIL
+
+
+####################################################################
+# Author: Thomas Buchloh.
+# Date: Aug 2026
+# Purpose: One-time setup -- fetch NCBI's fcs.py wrapper and pull the
+#          fcs-gx container image into this project's own scratch
+#          space, then symlink the ~465GB GX reference database from
+#          joao's shared copy (scratch/botany/joao/databases/
+#          fcs_gx_db/gxdb) rather than downloading a second copy.
+#          Run once by hand; fcs_gx_screen.slrm and fcs_gx_clean.slrm
+#          both read from FCSDIR set up here.
+#
+#          This project originally downloaded its own full copy of
+#          the database (job 6173560, 2026-08-27) rather than reusing
+#          joao's, specifically because joao's copy looked stale
+#          (build files dated Aug 2025). Once downloaded, the fresh
+#          copy turned out byte-identical to joao's -- same
+#          gx-version, same build-date (2023-01-24), same md5 hashes
+#          for all.gxi/all.gxs -- confirming NCBI hasn't cut a new
+#          "all" GX database release since joao's copy was made, only
+#          that joao's files were copied/touched more recently than
+#          they were built. With no freshness difference, symlinking
+#          instead saves ~465GB of this project's 4TB scratch
+#          allocation (already ~1.4TB used before this database).
+#          fcs.py and fcs-gx.sif are still fetched fresh rather than
+#          symlinked -- they're tiny (~190MB) and this keeps the
+#          container version under this project's own control.
+#
+#          Re-review this tradeoff if joao's directory ever becomes
+#          unavailable, or before assuming the database is current --
+#          check gxdb/all.README.txt's build-date, and rerun with a
+#          real download (see git history of this file) if NCBI has
+#          since released a newer "all" database.
+####################################################################
+
+set -euxo pipefail
+
+FCSDIR=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/data/databases/fcs_gx
+mkdir -p "$FCSDIR"
+cd "$FCSDIR"
+
+# fcs.py wrapper (NCBI's official distribution)
+curl -LO https://github.com/ncbi/fcs/raw/main/dist/fcs.py
+chmod a+x fcs.py
+
+# Container image, pulled once and reused read-only by screen/clean jobs
+singularity pull -F fcs-gx.sif docker://ncbi/fcs-gx:latest
+
+# GX reference database: symlinked from joao's copy rather than downloaded
+# (see header comment)
+ln -sfn /lisc/data/scratch/botany/joao/databases/fcs_gx_db/gxdb "${FCSDIR}/gxdb"
+
+# finished
+exit

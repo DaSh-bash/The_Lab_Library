@@ -1,0 +1,44 @@
+#!/bin/bash
+
+#SBATCH --job-name=fcsaddb      ### named job, limit 8 chars
+#SBATCH --output=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/logs/%j.%x.out
+#SBATCH --error=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/logs/%j.%x.err
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=4G
+#SBATCH --time=1:00:00
+#SBATCH --mail-user=thomas.buchloh@univie.ac.at
+#SBATCH --mail-type=BEGIN,END,FAIL
+
+
+####################################################################
+# Author: Thomas Buchloh.
+# Date: Aug 2026
+# Purpose: One-time setup -- fetch NCBI's run_fcsadaptor.sh runner
+#          script and pull the fcs-adaptor container image into this
+#          project's own scratch space. Run once by hand;
+#          fcs_adaptor_screen.slrm reads from ADAPTORDIR set up here.
+#
+#          Previously fcs_adaptor_screen.slrm reused amin's shared,
+#          read-only copy (scratch/botany/amin/genome_assemblies/
+#          FCS_adaptor/bin) -- switched to a project-owned copy for
+#          the same reason as fcs_gx_download_db.slrm.
+####################################################################
+
+set -euxo pipefail
+
+ADAPTORDIR=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/data/databases/fcs_adaptor
+mkdir -p "$ADAPTORDIR"
+cd "$ADAPTORDIR"
+
+# Runner script (NCBI's official distribution -- kept as run_fcsadaptor.sh,
+# NCBI's own filename, rather than renamed)
+curl -LO https://github.com/ncbi/fcs/raw/main/dist/run_fcsadaptor.sh
+chmod a+x run_fcsadaptor.sh
+
+# Container image, pulled once and reused read-only by fcs_adaptor_screen.slrm
+# (version matches run_fcsadaptor.sh's own DEFAULT_VERSION as of this writing)
+singularity pull fcs-adaptor.sif docker://ncbi/fcs-adaptor:0.5.5
+
+# finished
+exit

@@ -1,0 +1,57 @@
+#!/bin/bash
+
+#SBATCH --job-name=fcsgxscr      ### named job, limit 8 chars
+#SBATCH --output=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/logs/%j.%x.out
+#SBATCH --error=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/logs/%j.%x.err
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=250G
+#SBATCH --time=1-00:00:00
+#SBATCH --mail-user=thomas.buchloh@univie.ac.at
+#SBATCH --mail-type=BEGIN,END,FAIL
+
+
+####################################################################
+# Author: Thomas Buchloh.
+# Date: Aug 2026
+# Purpose: FCS-GX (NCBI Foreign Contamination Screen, cross-species/
+#          GX module) screen of the purged primary assembly against
+#          the NCBI GX reference database. Writes a taxonomy report
+#          and an action report; fcs_gx_clean.slrm consumes the
+#          action report to strip out flagged contigs.
+#
+#          Runs against this project's own copy of the container and
+#          GX database (see fcs_gx_download_db.slrm), not another
+#          user's shared/read-only copy.
+#
+#          TAX_ID=29611 matches the Woodsia obtusa taxid already used
+#          for taxonomy exclusion/assignment in
+#          run_diamond_blastx_pri_hgsize.sh and run_blobtools_manual.sh.
+#
+#          mem/time carried over from the working template this was
+#          adapted from (joao's setup, ~4 cpu/100G for a smaller
+#          genome); bumped mem here since Woodsia's ~5.3Gb assembly is
+#          larger -- adjust down once an actual run's sacct/seff usage
+#          is known.
+####################################################################
+
+set -euxo pipefail
+
+FASTA=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/purge_dups_v1.2/woodsia_obtusa.purged.fa
+TAX_ID=29611
+
+OUT_DIR=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/contamination/fcs_gx
+mkdir -p "$OUT_DIR"
+cd "$OUT_DIR"
+
+FCSDIR=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/data/databases/fcs_gx
+export FCS_DEFAULT_IMAGE="${FCSDIR}/fcs-gx.sif"
+
+python3 "${FCSDIR}/fcs.py" screen genome \
+    --fasta "$FASTA" \
+    --out-dir "$OUT_DIR" \
+    --gx-db "${FCSDIR}/gxdb" \
+    --tax-id "$TAX_ID"
+
+# finished
+exit

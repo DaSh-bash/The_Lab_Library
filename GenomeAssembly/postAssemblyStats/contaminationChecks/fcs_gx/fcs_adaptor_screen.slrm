@@ -1,0 +1,47 @@
+#!/bin/bash
+
+#SBATCH --job-name=fcsadscr      ### named job, limit 8 chars
+#SBATCH --output=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/logs/%j.%x.out
+#SBATCH --error=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/logs/%j.%x.err
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=4G
+#SBATCH --time=1:00:00
+#SBATCH --mail-user=thomas.buchloh@univie.ac.at
+#SBATCH --mail-type=BEGIN,END,FAIL
+
+
+####################################################################
+# Author: Thomas Buchloh.
+# Date: Aug 2026
+# Purpose: FCS-adaptor (NCBI Foreign Contamination Screen, adaptor/
+#          vector module) screen of the purged primary assembly for
+#          leftover sequencing adaptor/vector/primer contamination --
+#          a different contamination class from FCS-GX, which screens
+#          for foreign organisms. Writes fcs_adaptor_report.txt.
+#
+#          --euk: Woodsia obtusa is eukaryotic.
+#
+#          Runs against this project's own copy of the container and
+#          runner script (see fcs_adaptor_setup.slrm), not another
+#          user's shared/read-only copy.
+####################################################################
+
+set -euxo pipefail
+
+FASTA=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/purge_dups_v1.2/woodsia_obtusa.purged.fa
+
+OUT_DIR=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/output/contamination/fcs_adaptor
+mkdir -p "$OUT_DIR"
+
+ADAPTORDIR=/lisc/data/scratch/botany/TBuchloh_WickettLab/wobtusa/genome_assembly/data/databases/fcs_adaptor
+
+"${ADAPTORDIR}/run_fcsadaptor.sh" \
+    --fasta-input "$FASTA" \
+    --output-dir "$OUT_DIR" \
+    --euk \
+    --container-engine singularity \
+    --image "${ADAPTORDIR}/fcs-adaptor.sif"
+
+# finished
+exit
