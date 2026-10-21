@@ -20,14 +20,14 @@ set -e
 ##################################################################
 
 ## load module
-# module load OrthoFinder/3.1.2-foss-2024a
+module load OrthoFinder
 
 # or
 
 ## load conda and conda environment
-# The LiSC HPC module for OrthoFinder may or may not work. If needed, a script for building the conda environment for your prefered version of Orthofinder is available on the Wickett_Lab Github.
-module load Conda/Miniforge3
-conda activate of3_env
+# # The LiSC HPC module for OrthoFinder may or may not work. If needed, a script for building the conda environment for your prefered version of Orthofinder is available on the Wickett_Lab Github.
+# module load Conda/Miniforge3
+# conda activate of3_env
 
 # Paths to your input and output locations. Make sure to adjust these paths to your specific directories.
 INFILE=/lisc/data/work/botany/TBuchloh_WickettLab/lisc_meiosis_WGD_angiosperms/data/raw_data/pep
