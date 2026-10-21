@@ -3,7 +3,7 @@
 #SBATCH --job-name=astral_forTreePL ### named job, limit 8 chars
 #SBATCH --output=output/out/%x.%j.out   ### path for output file
 #SBATCH --error=output/err/%x.%j.err    ### path for error file
-#SBATCH --cpus-per-task=36 ### number of cpus assigned to job if ntask=1
+#SBATCH --cpus-per-task=64 ### number of cpus assigned to job if ntask=1
 #SBATCH --mem=2G   ### RAM available for the script
 #SBATCH --time=01:00:00   ### time limit (dd-hh:mm:ss) 
 #SBATCH --mail-user=julia.mcclafferty@univie.ac.at    ### email to receive script notifications
